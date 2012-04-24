@@ -1,4 +1,8 @@
-<% if project %>
+<% if project.is_a? Location %>
+  <li class="project location-header <%=grid_class%>">
+    <span><%= project %></span>
+  </li>
+<% elsif project %>
   <li class="<%= project.css_class %> <%=grid_class%>" id="project_<%= project.id %>" data-id="<%= project.id %>">
     <div class="information">
       <h1><%= link_to(project.code, project.url) %></h1>
